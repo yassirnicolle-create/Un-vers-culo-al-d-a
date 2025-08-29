@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Versículo del Día</title>
+
+<style>
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #6fc9d4, #b98d9c);
+    color: #333;
+    text-align: center;
+    padding: 50px;
+    }
+
+    h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #6a1b9a;
+    }
+
+    button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #8e24aa;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+    background-color: #6a1b9a;
+    }
+
+    #versiculo {
+    margin-top: 40px;
+    font-size: 22px;
+    font-style: italic;
+    color: #4e342e;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff3e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    }
+</style>
+</head>
+<body>
+<h1>🌿 Versículo del Día 🌿</h1>
+<button onclick="mostrarVersiculo()">Mostrar versículo</button>
+<div id="versiculo"></div>
+
+<script>
+    const versiculos = [
+    "📖 Filipenses 4:13 — Todo lo puedo en Cristo que me fortalece.",
+    "📖 Proverbios 3:5 — Confía en el Señor con todo tu corazón y no te apoyes en tu propia prudencia.",
+    "📖 Isaías 41:10 — No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios.",
+    "📖 Salmo 23:1 — El Señor es mi pastor, nada me faltará.",
+    "📖 Jeremías 29:11 — Porque yo sé los planes que tengo para ti, dice el Señor, planes de bienestar y no de mal."
+    ];
+
+    function mostrarVersiculo() {
+      const aleatorio = Math.floor(Math.random() * versiculos.length);
+    const versiculo = versiculos[aleatorio];
+    const contenedor = document.getElementById("versiculo");
+    contenedor.style.opacity = 0;
+    setTimeout(() => {
+        contenedor.innerText = versiculo;
+        contenedor.style.opacity = 1;
+    }, 300);
+    }
+</script>
+</body>
+</html>
